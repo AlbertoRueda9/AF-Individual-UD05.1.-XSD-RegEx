@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<usuarios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="usuarios.xsd">
+
+    <usuario id="1">
+        <email>albertorueda572@gmail.com</email>
+        <telefono>+34 666111222</telefono>
+        <codigoPostal>11130</codigoPostal>
+        <nombreUsuario>albertorueda9</nombreUsuario>
+        <contraseña>Romero99.</contraseña>
+    </usuario>
+
+    <usuario id="2">
+        <email>senorpirulo56@gmail.com</email>
+        <telefono>+34 666333444</telefono>
+        <codigoPostal>41005</codigoPostal>
+        <nombreUsuario>sr.pirulo10</nombreUsuario>
+        <contraseña>Le0.messi</contraseña>
+    </usuario>
+
+    <usuario id="3">
+        <email>raultijeda.12@gmail.com</email>
+        <telefono>+34 666555777</telefono>
+        <codigoPostal>41560</codigoPostal>
+        <nombreUsuario>raultjdm46</nombreUsuario>
+        <contraseña>Luffy_pirate</contraseña>
+    </usuario>
+
+</usuarios>

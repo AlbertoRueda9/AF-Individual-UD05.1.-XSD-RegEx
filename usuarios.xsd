@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="telefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\+34 ?)?[6-9][0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="codigoPostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[1-4][0-9]|5[0-2])[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nombreUsuario">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="8"/>
+            <xs:maxLength value="20"/>
+            <xs:pattern value="[a-z][a-z0-9._]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="contrasena">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="8"/>
+            <xs:pattern value=".*[a-z].*"/>
+            <xs:pattern value=".*[A-Z].*"/>
+            <xs:pattern value=".*[0-9].*"/>
+            <xs:pattern value=".*[^A-Za-z0-9].*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="usuario">
+        <xs:sequence>
+            <xs:element name="email" type="email"/>
+            <xs:element name="telefono" type="telefono"/>
+            <xs:element name="codigoPostal" type="codigoPostal"/>
+            <xs:element name="nombreUsuario" type="nombreUsuario"/>
+            <xs:element name="contraseña" type="contrasena"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+
+    <xs:element name="usuarios">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="usuario" type="usuario" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
